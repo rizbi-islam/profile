@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizbi Islam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --accent: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            background-color: #f8fafc;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Hero */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 1.5rem;
+            background: #1e293b;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-title {
+            font-size: 1.4rem;
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Social & Contact Buttons */
+        .social-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            color: var(--secondary);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .social-btn.linkedin {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .social-btn.github {
+            background: #333;
+            color: white;
+        }
+        
+        .social-btn.mail {
+            background: #ea4335;
+            color: white;
+        }
+        
+        .social-btn.whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .social-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .social-btn.site {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Header Links (subtle sticky with micro-3D hover) */
+        .header-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            padding: 0.5rem 12px;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: blur(6px);
+            transition: background 240ms ease, box-shadow 240ms ease, padding 240ms ease, transform 240ms ease;
+        }
+        .header-links.compact {
+            background: rgba(15,23,42,0.6);
+            box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+            padding: 0.35rem 12px;
+            transform: translateY(0);
+        }
+        .header-link {
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease, background 200ms ease;
+            transform-origin: center bottom;
+            display: inline-block;
+            will-change: transform;
+        }
+        .header-link:hover,
+        .header-link:focus {
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            transform: translateY(-4px) rotateX(4deg) scale(1.02);
+            box-shadow: 0 10px 20px rgba(2,6,23,0.12);
+            outline: none;
+        }
+        .header-link:active {
+            transform: translateY(-2px) rotateX(2deg) scale(1.01);
+        }
+        /* Reduce the effect on small screens */
+        @media (max-width: 768px) {
+            .header-links { padding: 0.4rem 8px; }
+            .header-link { padding: 8px 10px; transition: none; transform: none; box-shadow: none; }
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-gray);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        section h2 i {
+            color: var(--accent);
+        }
+        
+        /* Summary */
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+        }
+        
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 0.8rem;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+        
+        .experience-date {
+            background: var(--light-gray);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .experience-company {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .experience-company i {
+            font-size: 0.9rem;
+        }
+        
+        .experience-location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .experience-desc {
+            margin-top: 0.8rem;
+        }
+        
+        .experience-desc ul {
+            padding-left: 1.2rem;
+        }
+        
+        .experience-desc li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .experience-desc li:before {
+            content: "▸";
+            color: var(--accent);
+            position: absolute;
+            left: -1rem;
+        }
+        
+        /* Previously expandable sections (now always visible) */
+        .expandable-section {
+            margin-top: 2rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: visible;
+        }
+        
+        .expandable-section .section-subtitle {
+            background: var(--light);
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .expandable-content {
+            padding: 1.5rem;
+            max-height: none;
+            overflow: visible;
+            transition: none;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .skill-tag {
+            background: var(--light-gray);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        .skill-tag.highlight {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Education & Certifications */
+        .edu-cert-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .edu-item, .cert-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .edu-title, .cert-title {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        
+        .edu-details, .cert-details {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Projects */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Core Strengths */
+        .strengths-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .strength-item {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        /* Quick Contact Sidebar */
+        .quick-contact-sidebar {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px 5px;
+            background: white;
+            border-radius: 10px 0 0 10px;
+            box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quick-contact-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .quick-contact-btn:hover {
+            transform: scale(1.1) translateX(-5px);
+        }
+        
+        .quick-contact-btn .tooltip {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-contact-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 65px;
+        }
+        
+        .quick-contact-btn.linkedin { background: #0077b5; }
+        .quick-contact-btn.github { background: #333; }
+        .quick-contact-btn.mail { background: #ea4335; }
+        .quick-contact-btn.whatsapp { background: #25d366; }
+        .quick-contact-btn.twitter { background: #1da1f2; }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            z-index: 10000;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .back-to-top.show { display: flex; opacity: 1; transform: translateY(0); }
+        .back-to-top.hide { opacity: 0; transform: translateY(10px); pointer-events: none; }
+        .back-to-top:focus { outline: 3px solid rgba(37,99,235,0.3); }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-link {
+            color: var(--light-gray);
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .social-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .skills-container, .edu-cert-container, .projects-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .strength-item {
+                min-width: 100%;
+            }
+            
+            .quick-contact-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Quick Contact Sidebar -->
+    <div class="quick-contact-sidebar">
+        <a href="https://www.linkedin.com/in/rizbi-islam" target="_blank" class="quick-contact-btn linkedin">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="tooltip">LinkedIn Profile</span>
+        </a>
+        <a href="https://github.com/rizbiislam" target="_blank" class="quick-contact-btn github">
+            <i class="fab fa-github"></i>
+            <span class="tooltip">GitHub Portfolio</span>
+        </a>
+        <a href="mailto:rizbi.cse@gmail.com" class="quick-contact-btn mail">
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Send Email</span>
+        </a>
+        <a href="https://wa.me/8801609084529" target="_blank" class="quick-contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">WhatsApp Chat</span>
+        </a>
+        <a href="https://twitter.com/" target="_blank" class="quick-contact-btn twitter">
+            <i class="fab fa-twitter"></i>
+            <span class="tooltip">Twitter Profile</span>
+        </a>
+    </div>
+    
+    <!-- Header & Hero Section -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <img src="assets/Pro2.jpg" alt="Rizbi Islam" class="profile-img">
+                <h1>Rizbi Islam</h1>
+                <p class="hero-title">Software Quality Assurance Engineer | Expert in Manual & Automation Testing</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>rizbi.cse@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+880) 1609084529</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </div>
+                </div>
+                
+                <div class="social-contact">
+                    <a href="https://www.linkedin.com/in/rizbi-islam" target="_blank" class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn Profile
+                    </a>
+                    <!-- Download buttons: replace GitHub and Personal Website with CV and Biodata downloads -->
+                    <a href="assets/Rizbi_Islam_SQA_Engineer.pdf" download="Rizbi_CV.pdf" target="_blank" rel="noopener noreferrer" class="social-btn github" title="Download CV">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="assets/Rizbi_Islam_Biodata.pdf" download="Rizbi_Biodata.pdf" target="_blank" rel="noopener noreferrer" class="social-btn site" title="Download Biodata">
+                        <i class="fas fa-download"></i> Download Biodata
+                    </a>
+                </div>
+
+                <div class="header-links">
+                    <a href="#summary" class="header-link">Summary</a>
+                    <a href="#experience" class="header-link">Experience</a>
+                    <a href="#skills" class="header-link">Skills</a>
+                    <a href="#education" class="header-link">Education</a>
+                    <a href="#projects" class="header-link">Projects</a>
+                    <a href="#strengths" class="header-link">Strengths</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Professional Summary -->
+        <section id="summary">
+            <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+            <p class="summary-text">
+                Result-oriented Software Quality Assurance (SQA) Engineer with hands-on experience in manual and automation testing of web and API systems. Skilled in ensuring high-quality releases through functional, regression, and smoke testing, defect lifecycle management, and Agile/Scrum methodologies. Proficient with Selenium, TestNG, Postman, Newman, Jira, and experienced in developing scalable automation frameworks with Java.
+            </p>
+        </section>
+        
+        <!-- Professional Experience -->
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <!-- Current Position -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">IT Executive & QA Engineer</h3>
+                    <span class="experience-date">March 2025 – Present</span>
+                </div>
+                <p class="experience-company">RK Software (Bangladesh) Limited | Dhaka, Bangladesh</p>
+                <div class="experience-desc">
+                    <ul>
+                        <li>Performed end-to-end testing of full-stack systems including web UIs and backend logic</li>
+                        <li>Designed and executed manual test cases (functional, UI/UX, regression) ensuring product stability and performance</li>
+                        <li>Conducted RESTful API testing using Postman and automated with Newman, producing detailed HTML reports</li>
+                        <li>Managed the complete defect lifecycle and coordinated fixes and retests for timely releases</li>
+                        <li>Contributed to two national-level government projects (DNCC & CCC Revenue Management Systems), ensuring system stability in live environments</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Additional Experience (now always visible) -->
+            <div id="additionalExperience">
+            
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">QA Engineer</h3>
+                        <span class="experience-date">Mar 2025 - Nov 2025</span>
+                    </div>
+                    <p class="experience-company">
+                        <i class="fas fa-building"></i> IT Directorate, Bangladesh Army · Part-time
+                    </p>
+                    <div class="experience-location">
+                        <i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh · Remote
+                    </div>
+                    <div class="experience-desc">
+                        <p><strong>Project:</strong> IT-enabled Revenue Automation System (DNCC)</p>
+                        <ul>
+                            <li>Performed end-to-end QA for a production government revenue automation system</li>
+                            <li>Designed and executed manual test cases: functional, regression, smoke, and UAT</li>
+                            <li>Conducted REST API testing using Postman and Newman; validated backend logic for Node.js services</li>
+                            <li>Automated critical UI workflows using Selenium WebDriver + TestNG, Playwright, and Cypress</li>
+                            <li>Executed performance and load testing using JMeter and Locust</li>
+                            <li>Managed test case execution and reporting with TestRail; tracked defects using Jira</li>
+                            <li>Collaborated with developers and stakeholders in Agile/Scrum and remote environments</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Previous Experience -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Software QA Engineer</h3>
+                        <span class="experience-date">2023 – 2025</span>
+                    </div>
+                    <p class="experience-company">Freelance & Contract Projects</p>
+                    <div class="experience-desc">
+                        <ul>
+                            <li>Developed and executed test plans for various web applications and APIs</li>
+                            <li>Built automation frameworks using Selenium WebDriver and TestNG</li>
+                            <li>Collaborated with development teams to implement QA processes in Agile environments</li>
+                            <li>Performed UAT and regression testing to ensure product quality before release</li>
+                            <li>Created comprehensive test documentation and reports for stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            
+            <!-- Expandable Skills Section -->
+            <div id="detailedSkills">
+                <h3 class="section-subtitle">Detailed Skills Breakdown</h3>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Testing Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Selenium WebDriver</span>
+                            <span class="skill-tag">TestNG</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Newman</span>
+                            <span class="skill-tag">JMeter</span>
+                            <span class="skill-tag">Allure Report</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">TestRail</span>
+                            <span class="skill-tag">Playwright</span>
+                            <span class="skill-tag">Cypress</span>
+                            <span class="skill-tag">Locust</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Testing Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Agile (Scrum)</span>
+                            <span class="skill-tag">SDLC</span>
+                            <span class="skill-tag">STLC</span>
+                            <span class="skill-tag">Functional Testing</span>
+                            <span class="skill-tag">Regression Testing</span>
+                            <span class="skill-tag">Smoke Testing</span>
+                            <span class="skill-tag">UAT</span>
+                            <span class="skill-tag">Defect Tracking</span>
+                            <span class="skill-tag">API Testing</span>
+                            <span class="skill-tag">Performance Testing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Programming & Automation</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag highlight">Java (Primary)</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">Test Automation</span>
+                            <span class="skill-tag">Framework Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Databases & Version Control</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag highlight">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Version Control</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Skills Overview -->
+            <div class="skills-container" style="margin-top: 1.5rem;">
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">Automation Testing</span>
+                        <span class="skill-tag highlight">Manual Testing</span>
+                        <span class="skill-tag highlight">API Testing</span>
+                        <span class="skill-tag">Performance Testing</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Primary Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">TestNG</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education & Certifications -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education & Certifications</h2>
+            <div class="edu-cert-container">
+                <div class="edu-item">
+                    <h3 class="edu-title">B.Sc. in Computer Science & Engineering (CSE)</h3>
+                    <p class="edu-details">Daffodil International University</p>
+                    <p class="edu-details">Graduated: 2023</p>
+                </div>
+                
+                <div class="cert-item">
+                    <h3 class="cert-title">SQA: Manual & Automated Testing</h3>
+                    <p class="cert-details">ostad.app</p>
+                    <p class="cert-details">Covering SQA methodologies, Selenium automation, and API testing principles.</p>
+                </div>
+                
+                <!-- Additional certification -->
+                <div class="cert-item">
+                    <h3 class="cert-title">Agile Testing & Automation</h3>
+                    <p class="cert-details">LinkedIn Learning</p>
+                    <p class="cert-details">Advanced testing strategies in Agile and Scrum environments.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects -->
+        <section id="projects">
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+            
+            <!-- Expandable Projects Section -->
+            <div id="allProjects">
+                <h3 class="section-subtitle">All Projects & Details</h3>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">SauceDemo Automated Testing</h3>
+                            <p>Developed an end-to-end test automation framework using Selenium WebDriver and TestNG. Implemented the Page Object Model (POM) and Allure Reporting for visual documentation. Automated complete eCommerce workflows: login, product selection, cart operations, and checkout validation.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/rizbilslam/saucedemo-test" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">Demo Evershop (API & Web Automation)</h3>
+                            <p>Automated API testing using Postman & Newman, generating detailed HTML reports. Built a scalable Selenium WebDriver + TestNG automation framework following the POM pattern.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/rizbilslam/Api-Testing-Demo-evershop" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> API Testing Repo
+                                </a>
+                                <a href="https://github.com/rizbilslam/Demo-Evershop" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> Web Automation Repo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3 class="project-title">DNCC Revenue Automation System</h3>
+                            <p>End-to-end QA for government revenue automation system. Conducted functional, regression, smoke, UAT testing. Automated UI workflows with Selenium, Playwright, Cypress. Performance testing with JMeter and Locust.</p>
+                            <div class="project-links">
+                                <a href="https://sites.google.com/diu.edu.bd/rizbiislam58" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> Project Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Project -->
+            <div class="project-card" style="margin-top: 1.5rem;">
+                <div class="project-content">
+                    <h3 class="project-title">Featured: Government Revenue System QA</h3>
+                    <p>Comprehensive quality assurance for a national-level government revenue automation system, involving manual testing, API testing with Postman/Newman, UI automation with Selenium/Playwright/Cypress, and performance testing with JMeter/Locust.</p>
+                    <div class="project-links">
+                        <a href="https://sites.google.com/diu.edu.bd/rizbiislam58" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Case Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Core Strengths -->
+        <section id="strengths">
+            <h2><i class="fas fa-star"></i> Core Strengths</h2>
+            <div class="strengths-container">
+                <div class="strength-item">Automation Framework Design</div>
+                <div class="strength-item">API Testing</div>
+                <div class="strength-item">Manual Testing</div>
+                <div class="strength-item">Agile & Scrum</div>
+                <div class="strength-item">SDLC/STLC</div>
+                <div class="strength-item">Regression & UAT Testing</div>
+                <div class="strength-item">Defect Tracking & Reporting</div>
+                <div class="strength-item">Continuous Improvement</div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-contact">
+                    <a href="https://www.linkedin.com/in/rizbi-islam" target="_blank" class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://sites.google.com/diu.edu.bd/rizbiislam58" target="_blank" class="social-btn site">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="mailto:rizbi.cse@gmail.com" class="social-btn mail">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/8801609084529" target="_blank" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="social-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+                <!-- navigation moved to header -->
+                
+                <p class="copyright">© 2026 Rizbi Islam - Software QA Engineer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Expandable behavior removed — sections are always visible now.
+        
+        // Smooth scrolling for anchor links (adjusts for sticky header height)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // calculate header height if sticky
+                    const headerNav = document.querySelector('.header-links');
+                    const headerHeight = headerNav ? Math.ceil(headerNav.getBoundingClientRect().height) + 8 : 80;
+                    const top = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Subtle compact header on scroll
+        (function() {
+            const header = document.querySelector('.header-links');
+            if (!header) return;
+
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function update() {
+                const scY = window.scrollY;
+
+                // compact when scrolled down beyond threshold
+                if (scY > 80) {
+                    header.classList.add('compact');
+                } else {
+                    header.classList.remove('compact');
+                }
+
+                // small hide-on-scroll-down, show-on-scroll-up behavior to reduce distraction
+                if (Math.abs(scY - lastScrollY) > 20) {
+                    if (scY > lastScrollY && scY > 120) {
+                        header.style.transform = 'translateY(-110%)';
+                    } else {
+                        header.style.transform = 'translateY(0)';
+                    }
+                }
+
+                lastScrollY = scY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // initial state
+            update();
+        })();
+        
+        // Interactive skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Back to Top button behavior
+        (function() {
+            const backToTop = document.getElementById('backToTop');
+            if (!backToTop) return;
+            
+            const toggle = () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            };
+            
+            window.addEventListener('scroll', toggle);
+            // ensure state on load
+            toggle();
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            backToTop.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
