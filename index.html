@@ -482,6 +482,17 @@
             border-radius: 10px 0 0 10px;
             box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
         }
+
+        /* Smooth hide/show when footer intersects */
+        .quick-contact-sidebar {
+            transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+        }
+        .quick-contact-sidebar.hidden {
+            opacity: 0;
+            transform: translateX(30px);
+            visibility: hidden;
+            pointer-events: none;
+        }
         
         .quick-contact-btn {
             width: 50px;
@@ -1131,6 +1142,25 @@
                 }
             });
         })();
+
+            // Hide quick-contact-sidebar when footer is visible
+            (function() {
+                const sidebar = document.querySelector('.quick-contact-sidebar');
+                const footer = document.querySelector('footer');
+                if (!sidebar || !footer) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            sidebar.classList.add('hidden');
+                        } else {
+                            sidebar.classList.remove('hidden');
+                        }
+                    });
+                }, { root: null, threshold: 0 });
+
+                observer.observe(footer);
+            })();
     </script>
 </body>
 </html>
