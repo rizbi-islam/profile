@@ -147,8 +147,8 @@
             color: white;
         }
         
-        .social-btn.twitter {
-            background: #1da1f2;
+        .social-btn.x {
+            background: #0c0c0c;
             color: white;
         }
         
@@ -527,7 +527,7 @@
         .quick-contact-btn.github { background: #333; }
         .quick-contact-btn.mail { background: #ea4335; }
         .quick-contact-btn.whatsapp { background: #25d366; }
-        .quick-contact-btn.twitter { background: #1da1f2; }
+        .quick-contact-btn.x { background: #0d0e0f; }
         
         /* Back to Top Button */
         .back-to-top {
@@ -624,7 +624,22 @@
             }
             
             .quick-contact-sidebar {
-                display: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+                padding: 8px;
+                right: 12px;
+                top: auto;
+                bottom: 12px;
+                transform: none;
+                border-radius: 12px;
+            }
+
+            .quick-contact-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -648,9 +663,9 @@
             <i class="fab fa-whatsapp"></i>
             <span class="tooltip">WhatsApp Chat</span>
         </a>
-        <a href="https://twitter.com/" target="_blank" class="quick-contact-btn twitter">
-            <i class="fab fa-twitter"></i>
-            <span class="tooltip">Twitter Profile</span>
+        <a href="https://x.com/" target="_blank" class="quick-contact-btn x">
+            <i class="fab fa-x"></i>
+            <span class="tooltip">X Profile</span>
         </a>
     </div>
     
@@ -994,8 +1009,8 @@
                     <a href="https://wa.me/8801609084529" target="_blank" class="social-btn whatsapp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://twitter.com/" target="_blank" class="social-btn twitter">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://x.com/" target="_blank" class="social-btn X">
+                        <i class="fab fa-X"></i>
                     </a>
                 </div>
                 
