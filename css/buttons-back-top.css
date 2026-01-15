@@ -1,0 +1,36 @@
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.back-to-top.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top.hide {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.back-to-top:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+}
