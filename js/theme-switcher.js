@@ -1,6 +1,6 @@
 class ThemeSwitcher {
     constructor() {
-        this.theme = localStorage.getItem('portfolio-theme') || 'dark';
+        this.theme = localStorage.getItem('portfolio-theme') || 'light';
         this.init();
     }
 
