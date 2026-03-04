@@ -1,0 +1,374 @@
+/* ══════════════════════════════════════════════════════
+   Rizbi Islam — Personal Bio-Data / CV
+   A4 single-page, print-ready, signature image support
+   ══════════════════════════════════════════════════════ */
+
+/* ── Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 13px; } /* base smaller to fit A4 */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  background: #e8edf2;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(21,128,61,.15); }
+
+/* ── Screen wrapper ── */
+.screen-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+  gap: 1rem;
+}
+
+/* ── Action bar (screen only) ── */
+.action-bar {
+  width: 100%;
+  max-width: 794px;
+  background: #fff;
+  border-radius: .85rem;
+  padding: .75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .65rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.action-note { font-size: .8rem; color: #64748b; }
+.action-note b { color: #1e293b; }
+.action-btns { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+.btn-dl {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 600;
+  padding: .5rem 1.1rem; border-radius: .55rem;
+  background: linear-gradient(135deg, #15803d, #0ea5e9);
+  color: #fff; cursor: pointer; border: none;
+  transition: all .15s; text-decoration: none;
+}
+.btn-dl:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(21,128,61,.3); }
+.btn-print {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 600;
+  padding: .5rem 1.1rem; border-radius: .55rem;
+  background: transparent; border: 1.5px solid #15803d; color: #15803d;
+  cursor: pointer; transition: all .15s;
+}
+.btn-print:hover { background: #f0fdf4; }
+
+/* ── Signature upload control (screen only) ── */
+.sig-upload-ctrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+}
+.sig-upload-label {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 500;
+  color: #0369a1; cursor: pointer;
+  padding: .35rem .85rem; border-radius: .45rem;
+  border: 1.5px dashed #93c5fd; background: #eff6ff;
+  transition: all .15s;
+}
+.sig-upload-label:hover { border-color: #3b82f6; background: #dbeafe; }
+.sig-upload-input { display: none; }
+.sig-upload-hint { font-size: .65rem; color: #94a3b8; font-family: 'JetBrains Mono', monospace; }
+
+/* ── A4 Page shell ── */
+/* A4 = 210mm × 297mm = 794px × 1123px at 96dpi screen */
+.a4-page {
+  width: 794px;
+  height: 1123px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 48px rgba(0,0,0,.18), 0 2px 8px rgba(0,0,0,.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Header band ── */
+.bio-header {
+  background: linear-gradient(135deg, #0f2540 0%, #0c3547 55%, #0f2540 100%);
+  padding: 1.35rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.bio-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(21,128,61,.18), transparent 65%);
+}
+.bio-photo {
+  width: 78px; height: 78px;
+  object-fit: cover; object-position: top center;
+  border-radius: 50%;
+  border: 2.5px solid rgba(74,222,128,.55);
+  box-shadow: 0 0 0 4px rgba(74,222,128,.1), 0 6px 18px rgba(0,0,0,.4);
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+  display: block;
+}
+.bio-photo-fallback {
+  width: 78px; height: 78px; border-radius: 50%;
+  background: rgba(74,222,128,.15);
+  border: 2.5px solid rgba(74,222,128,.4);
+  display: none; align-items: center; justify-content: center;
+  font-size: 1.8rem; font-weight: 800; color: #4ade80;
+  position: relative; z-index: 1; flex-shrink: 0;
+}
+.bio-header-text { flex: 1; z-index: 1; }
+.bio-doc-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem; letter-spacing: .2em;
+  text-transform: uppercase; color: rgba(74,222,128,.85);
+  display: flex; align-items: center; gap: .4rem;
+  margin-bottom: .3rem;
+}
+.bio-doc-label::before { content: ''; width: 18px; height: 1px; background: rgba(74,222,128,.5); }
+.bio-name { font-size: 1.55rem; font-weight: 800; color: #fff; letter-spacing: -.03em; margin-bottom: .15rem; }
+.bio-title { font-size: .82rem; color: rgba(148,212,255,.85); font-weight: 400; margin-bottom: .65rem; }
+.bio-pills { display: flex; flex-wrap: wrap; gap: .35rem; }
+.hpill {
+  font-family: 'JetBrains Mono', monospace; font-size: .57rem;
+  color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: .18rem .55rem; border-radius: 999px; white-space: nowrap;
+}
+.hpill.green { color: rgba(74,222,128,.9); border-color: rgba(74,222,128,.25); background: rgba(74,222,128,.08); }
+
+/* ── Body ── */
+.bio-body {
+  flex: 1;
+  padding: 1rem 2rem .8rem;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  overflow: hidden;
+}
+
+/* ── Two-column layout ── */
+.bio-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+}
+
+/* ── Section label ── */
+.bio-sec-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .58rem; font-weight: 600;
+  color: #15803d; letter-spacing: .16em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: .5rem;
+  margin-bottom: .5rem;
+}
+.bio-sec-title::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, #bbf7d0, transparent);
+}
+
+/* ── Info table ── */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: .55rem;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  font-size: .78rem;
+}
+.info-table tr:nth-child(even) { background: #f8fafc; }
+.info-table td {
+  padding: .38rem .65rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  line-height: 1.45;
+}
+.info-table tr:last-child td { border-bottom: none; }
+.td-key {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem; font-weight: 600;
+  color: #15803d; white-space: nowrap;
+  width: 7.5rem;
+}
+.td-val { color: #334155; }
+.td-val a { color: #0369a1; }
+
+/* ── Education cards ── */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .55rem;
+}
+.edu-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: .6rem;
+  padding: .6rem .75rem;
+  position: relative; overflow: hidden;
+}
+.edu-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #15803d, #0ea5e9);
+}
+.edu-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .55rem; color: #64748b; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: .2rem;
+}
+.edu-degree { font-size: .75rem; font-weight: 700; color: #1e293b; margin-bottom: .12rem; line-height: 1.3; }
+.edu-inst   { font-size: .7rem; color: #15803d; font-weight: 500; margin-bottom: .08rem; }
+.edu-year   { font-size: .65rem; color: #94a3b8; }
+
+/* ── Skills chips ── */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: .3rem; }
+.sk-chip {
+  font-family: 'JetBrains Mono', monospace; font-size: .62rem;
+  color: #14532d; background: #f0fdf4; border: 1px solid #bbf7d0;
+  padding: .18rem .55rem; border-radius: 999px;
+}
+.sk-chip.blue   { color: #0c4a6e; background: #eff6ff; border-color: #bfdbfe; }
+.sk-chip.amber  { color: #713f12; background: #fffbeb; border-color: #fde68a; }
+.sk-chip.purple { color: #3b0764; background: #faf5ff; border-color: #e9d5ff; }
+
+/* ── Declaration ── */
+.declaration {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: .6rem;
+  padding: .6rem .9rem;
+  display: flex; align-items: flex-start; gap: .55rem;
+}
+.decl-icon { font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+.decl-text { font-size: .72rem; color: #475569; line-height: 1.6; font-style: italic; }
+
+/* ── Signature row ── */
+.sig-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: .55rem;
+  border-top: 1px solid #e2e8f0;
+  gap: 1rem;
+}
+.sig-block { text-align: center; display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+
+/* Signature image box — fixed size, any image scales inside */
+.sig-img-box {
+  width: 140px;
+  height: 56px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+.sig-img {
+  max-width: 140px;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+}
+.sig-placeholder {
+  width: 140px;
+  height: 1px;
+  background: #cbd5e1;
+  margin-top: auto;
+}
+.sig-name { font-size: .72rem; font-weight: 700; color: #1e293b; }
+.sig-role { font-size: .62rem; color: #94a3b8; font-family: 'JetBrains Mono', monospace; }
+
+.sig-date-box {
+  width: 120px;
+  height: 56px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.sig-date-line { width: 120px; height: 1px; background: #cbd5e1; }
+
+/* ── Footer ── */
+.bio-footer {
+  background: #0f2540;
+  padding: .55rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .35rem;
+  flex-shrink: 0;
+}
+.bio-footer span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .58rem; color: rgba(255,255,255,.35);
+}
+
+/* ══════════════════════════════════════════════════════
+   PRINT STYLES
+   ══════════════════════════════════════════════════════ */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  body { background: #fff; }
+  .screen-wrap { padding: 0; background: #fff; }
+
+  /* Hide screen-only controls */
+  .action-bar { display: none !important; }
+
+  /* A4 page fills exactly */
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    border-radius: 0;
+    box-shadow: none;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Force colour backgrounds to print */
+  .bio-header,
+  .bio-footer,
+  .edu-card::before,
+  .sk-chip,
+  .sk-chip.blue,
+  .sk-chip.amber,
+  .sk-chip.purple {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Show sig image in print */
+  .sig-img { display: block !important; }
+}
+
+/* ── Responsive screen fallback ── */
+@media (max-width: 840px) {
+  .a4-page { width: 100%; max-width: 794px; height: auto; }
+  .bio-cols { grid-template-columns: 1fr; }
+  .edu-grid { grid-template-columns: 1fr 1fr; }
+  .action-bar { max-width: 100%; }
+}
+@media (max-width: 520px) {
+  .bio-header { flex-direction: column; align-items: flex-start; padding: 1.25rem 1.25rem; }
+  .bio-body { padding: .85rem 1.25rem; }
+  .bio-footer { padding: .5rem 1.25rem; flex-direction: column; text-align: center; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .sig-row { flex-direction: column; align-items: center; gap: .75rem; }
+}

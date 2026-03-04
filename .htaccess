@@ -1,9 +1,0 @@
-Options -Indexes
-RewriteEngine On
-
-# Serve /profile/cv (no extension) → cv.html
-# Works when site is served from /profile/ subfolder
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
