@@ -1,0 +1,21 @@
+@keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(45px)}to{opacity:1;transform:translateX(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%{transform:scale(0)}80%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
+.fade-in-up{animation:fadeInUp .6s ease forwards}
+.fade-in{animation:fadeIn .8s ease forwards}
+.slide-in-right{animation:slideInRight .5s ease forwards}
+.float{animation:float 6s ease-in-out infinite}
+.twinkle{animation:twinkle 3s ease-in-out infinite}
+.hover-lift{transition:transform .3s ease,box-shadow .3s ease}
+.hover-lift:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.loading-spinner{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(74,222,128,.2);border-radius:50%;border-top-color:var(--g);animation:spin 1s ease-in-out infinite}
+.success-check{display:inline-block;width:22px;height:22px;background:var(--g);color:#040a10;border-radius:50%;text-align:center;line-height:22px;animation:pop .3s ease}
+/* stagger for data-manager rendered items */
+.timeline-item{opacity:0;animation:fadeInUp .6s ease forwards}
+.timeline-item:nth-child(1){animation-delay:.1s}.timeline-item:nth-child(2){animation-delay:.2s}.timeline-item:nth-child(3){animation-delay:.3s}
+.project-card{opacity:0;animation:fadeInUp .6s ease forwards}
+.project-card:nth-child(1){animation-delay:.1s}.project-card:nth-child(2){animation-delay:.2s}.project-card:nth-child(3){animation-delay:.3s}.project-card:nth-child(4){animation-delay:.4s}
