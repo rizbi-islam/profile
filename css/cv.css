@@ -1,0 +1,28 @@
+/* Fixed Signature Image */
+.sig-image-wrap{
+  width:160px;
+  height:60px;
+  margin:0 auto .4rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.sig-image{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* Strict One A4 Page */
+@media print{
+  .page{
+    width:210mm;
+    height:297mm;
+    overflow:hidden;
+  }
+  *{
+    page-break-inside:avoid;
+  }
+}
