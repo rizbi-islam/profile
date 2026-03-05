@@ -430,3 +430,13 @@ header[id]  { scroll-margin-top: 0; }
 [data-theme="light"] .about-card { background: #ffffff; }
 [data-theme="light"] .edu-item   { background: var(--bg2); }
 [data-theme="light"] .contact-row { background: #ffffff; }
+
+/* Bio-Data button — teal accent variant */
+.btn-bio {
+  border-color: var(--aq) !important;
+  color: var(--aq) !important;
+}
+.btn-bio:hover {
+  background: rgba(56,189,248,.1) !important;
+  box-shadow: 0 0 18px rgba(56,189,248,.15) !important;
+}
