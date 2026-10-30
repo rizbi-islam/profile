@@ -1,0 +1,459 @@
+{
+  "careerStart": "2025-03",
+  "personal": {
+    "name": "Rizbi Islam",
+    "title": "Software Quality Assurance Engineer",
+    "headline": "I worked for build and served bug free, user friendly Software.",
+    "tagline": "SQA Engineer | API & Performance Testing | Test Automation | Data Migration QA",
+    "email": "rizbi.cse@gmail.com",
+    "location": "Dhaka, Bangladesh",
+    "availability": "Open to QA / SDET opportunities",
+    "summary": "QA Engineer for municipal and city-corporation revenue systems: functional, regression and UAT testing, REST API validation with Postman and Newman, and load testing with JMeter and Locust. I also work directly in SQL Server on municipal data migrations (staging, column mapping, reconciliation and reversible corrections), backed by Python tooling. Focus on release quality, data integrity and practical test coverage.",
+    "resume": "assets/resume.pdf",
+    "social": {
+      "linkedin": "https://linkedin.com/in/rizbi-islam",
+      "github": "https://github.com/rizbi-islam",
+      "github_projects": "https://github.com/rizbiislam",
+      "portfolio": "https://rizbi-islam.github.io/profile"
+    },
+    "phone": "(+880) 1609-084529"
+  },
+  "seo": {
+    "title": "Rizbi Islam | SQA Engineer, API & Performance Testing, Data Migration QA"
+  },
+  "impact": [
+    {
+      "label": "Years in QA",
+      "value": "auto",
+      "note": "Since March 2025"
+    },
+    {
+      "label": "Municipal migration projects",
+      "value": "4+",
+      "note": "Pourashava registers into production tables"
+    },
+    {
+      "label": "Test types covered",
+      "value": "6",
+      "note": "Functional, regression, UAT, API, performance, data migration"
+    }
+  ],
+  "skills": {
+    "groups": [
+      {
+        "name": "Testing & Quality",
+        "items": [
+          {
+            "name": "Functional / Regression / UAT",
+            "tier": "Daily use"
+          },
+          {
+            "name": "Test case design & defect tracking",
+            "tier": "Daily use"
+          },
+          {
+            "name": "Data migration & reconciliation testing",
+            "tier": "Daily use"
+          },
+          {
+            "name": "Bug reports and client-facing test reports",
+            "tier": "Daily use"
+          }
+        ]
+      },
+      {
+        "name": "API & Performance",
+        "items": [
+          {
+            "name": "Postman",
+            "tier": "Daily use",
+            "proof": "REST collections for pre-release validation"
+          },
+          {
+            "name": "Newman",
+            "tier": "Daily use",
+            "proof": "CLI runs and HTML reports"
+          },
+          {
+            "name": "JMeter",
+            "tier": "Working",
+            "proof": "Session-based load tests on ASP.NET WebForms"
+          },
+          {
+            "name": "Locust",
+            "tier": "Working",
+            "proof": "Python concurrent-user load tests"
+          }
+        ]
+      },
+      {
+        "name": "Automation",
+        "items": [
+          {
+            "name": "Playwright (Python)",
+            "tier": "Daily use",
+            "proof": "Bulk entry and migration tooling"
+          },
+          {
+            "name": "Cypress (POM)",
+            "tier": "Working",
+            "proof": "Self-directed framework"
+          },
+          {
+            "name": "Selenium + TestNG (Java)",
+            "tier": "Working",
+            "proof": "Self-directed OpenCart suite"
+          },
+          {
+            "name": "pytest / Streamlit AppTest",
+            "tier": "Working",
+            "proof": "Automated tests for my own data tools"
+          }
+        ]
+      },
+      {
+        "name": "Data & Backend",
+        "items": [
+          {
+            "name": "SQL Server / SSMS",
+            "tier": "Daily use",
+            "proof": "Staging, INSERT...SELECT, correction scripts"
+          },
+          {
+            "name": "MySQL",
+            "tier": "Working"
+          },
+          {
+            "name": "Excel / openpyxl / pandas ETL",
+            "tier": "Daily use"
+          },
+          {
+            "name": "Bengali text & Unicode (NFC, Bijoy/SutonnyMJ)",
+            "tier": "Daily use",
+            "proof": "Legacy-font to Unicode converter"
+          }
+        ]
+      },
+      {
+        "name": "Languages & Tools",
+        "items": [
+          {
+            "name": "Python",
+            "tier": "Daily use"
+          },
+          {
+            "name": "JavaScript",
+            "tier": "Working"
+          },
+          {
+            "name": "Java",
+            "tier": "Working"
+          },
+          {
+            "name": "Streamlit",
+            "tier": "Working"
+          },
+          {
+            "name": "Git / GitHub",
+            "tier": "Daily use"
+          },
+          {
+            "name": "TypeScript",
+            "tier": "Learning"
+          },
+          {
+            "name": "Docker + CI/CD (GitHub Actions)",
+            "tier": "Learning"
+          }
+        ]
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "B.Sc. in Computer Science & Engineering",
+      "institution": "Daffodil International University",
+      "location": "Dhaka, Bangladesh",
+      "period": "2019 - 2023 (completed October 2023)"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Software Quality Assurance (SQA)",
+      "issuer": "ostad.app"
+    },
+    {
+      "name": "API Testing with Postman",
+      "issuer": "ostad.app"
+    },
+    {
+      "name": "Test Automation with Playwright",
+      "issuer": "ostad.app"
+    },
+    {
+      "name": "Test Automation Fundamentals",
+      "issuer": "Test Automation University"
+    },
+    {
+      "name": "Software Testing / QA",
+      "issuer": "Udemy"
+    }
+  ],
+  "currentlyUpskilling": [
+    {
+      "name": "TypeScript",
+      "purpose": "Typed automation code"
+    },
+    {
+      "name": "Docker + CI/CD",
+      "purpose": "Run test suites in build pipelines"
+    },
+    {
+      "name": "SQL (advanced)",
+      "purpose": "Backend verification and test data"
+    }
+  ],
+  "experience": [
+    {
+      "company": "RK Software (Bangladesh) Limited",
+      "position": "SQA Engineer",
+      "period": "March 2025 - Present",
+      "location": "Dhaka, Bangladesh",
+      "achievements": [
+        "QA on the Dhaka North City Corporation (DNCC) revenue automation system: UI overhaul and feature upgrades, structured test cycles for the IT-enabled upgrade phase (Apr-Sep 2025) and the core upgradation phase (Apr 2026-Present).",
+        "Run functional, regression and UAT cycles on municipal and city-corporation revenue systems; write test cases and track defects to closure.",
+        "Build and maintain Postman collections and run them with Newman for automated pre-release API validation.",
+        "Run load and performance tests with Locust and JMeter, including session-based tests for ASP.NET WebForms; deliver client-facing performance reports.",
+        "Building Python and Playwright automation for portal bulk entry where no import path exists (in progress), with data cleaning, duplicate matching and defensive validation.",
+        "Delivered data migration for several municipal (Pourashava) administrations, covering holding-tax and trade-license registers, into a 95-column tax assessment table using SQL Server staging, column mapping, schema validation and reversible correction scripts.",
+        "Built a config-driven tax-head segregation engine and arrear-opening generators that split each holding's total tax into per-head line items, using each administration's own head IDs and rates.",
+        "Verify migration results at both application and database layers: record-level checks, reconciliation and exception reports.",
+        "Now working on a centralized municipal tax platform that connects Pourashavas to one system in phases: mapping and loading each Pourashava's data and verifying the result against its source."
+      ],
+      "technologies": [
+        "Postman",
+        "Newman",
+        "Locust",
+        "JMeter",
+        "Python",
+        "Playwright",
+        "SQL Server / SSMS",
+        "MySQL",
+        "Git",
+        "Streamlit"
+      ]
+    },
+    {
+      "company": "IT Directorate, Bangladesh Army",
+      "position": "QA Engineer (Remote, part-time)",
+      "period": "April 2025 - Present",
+      "location": "Remote",
+      "achievements": [
+        "Assisted with QA and Selenium-based test automation for IT Directorate software projects."
+      ],
+      "technologies": [
+        "Manual & Functional Testing",
+        "Regression Testing",
+        "UAT"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "migration-pipeline",
+      "featured": true,
+      "title": "Municipal Data Migration Pipeline",
+      "kind": "Professional (client work)",
+      "status": "Delivered per Pourashava; reused across 4+ administrations",
+      "problem": "Holding-tax and trade-license registers from several Pourashavas, from roughly 450 to 3,700 records each, arrived as Excel, PDF or Word with corrupted Bengali text and inconsistent columns, and had to land in a 95-column production table.",
+      "solution": "Staging tables, a rule engine encoding the SOP, composite Bengali cell extraction, foreign-key ID resolution, a transactional INSERT...SELECT with a generated account number, and reversible correction scripts.",
+      "tricky": [
+        "SILENT CORRUPTION: the ACE OLEDB driver guessed column types in staging, so mixed text/number columns lost Bengali text with no error. Fix: explicit typing plus a source-vs-loaded cell-count check.",
+        "INVISIBLE MISMATCH: precomposed and decomposed Bengali characters (nukta forms) look identical but never match. Fix: NFC-normalize both sides before any compare.",
+        "SAFE FIXES: corrections written as transactional, reversible scripts on a stable join key, so any change can be traced and undone.",
+        "RULE-BASED IDs: account numbers built from a zero-padded prefix, a constant, and a running number with a length rule; one off-by-one breaks every record after it."
+      ],
+      "technologies": [
+        "SQL Server",
+        "Python",
+        "Streamlit",
+        "openpyxl",
+        "Unicode NFC"
+      ],
+      "links": {}
+    },
+    {
+      "id": "tax-head-engine",
+      "featured": true,
+      "title": "Tax-Head Segregation & Arrear Engine",
+      "kind": "Professional (client work)",
+      "status": "Working tool, under ongoing refinement",
+      "problem": "The master table stores one total tax amount per holding, but the child tax-head table needs one line per head (holding, water, lighting, conservancy and others), and every administration has different head IDs and rates.",
+      "solution": "A config-driven engine. Each administration's head catalog (IDs and rates) is loaded from configuration; walking the catalog in order, heads are added until their rates add up to the holding's total rate. It generates the child-table rows and the arrear-opening file, behind a Streamlit front end.",
+      "tricky": [
+        "NO SHARED IDS: two administrations had completely non-overlapping head IDs, so nothing is hard-coded; the catalog is configuration.",
+        "AMBIGUOUS COMBINATIONS: a 10% total could be built from several head combinations; a simple ordered walk of the catalog replaced a combinatorial search and removed the ambiguity.",
+        "MISSING RATE SIGNAL: when a file has no total-rate column, the full catalog is applied instead of blocking; an explicit zero rate still means no tax due."
+      ],
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "SQL Server",
+        "Excel"
+      ],
+      "links": {}
+    },
+    {
+      "id": "trade-license-pipeline",
+      "featured": true,
+      "title": "Trade License Reconciliation & Entry Automation",
+      "kind": "Professional (client work)",
+      "status": "Reconciliation delivered; portal automation in progress (needs BASE_URL and a full Codegen recording)",
+      "problem": "Trade-license registers of roughly 200 to 1,200 licenses, from more than one Pourashava, had duplicate license numbers, missing fees and Bengali spelling variants.",
+      "solution": "Three-stage pipeline (convert, scrape, UI entry) with row-level status, JSONL audit logs and a 36-column entry-ready schema. Reconciliation matched on mobile number plus business name, which found 15 genuinely missing records in one 450-row register. Fee and street normalization follow strict rules (fees never decrease).",
+      "tricky": [
+        "BAD KEY: license number had duplicates, so it cannot identify a row. Matching on mobile number plus business name found 15 genuinely missing records in one 450-row register.",
+        "NEVER-DECREASE RULE: when merging near-identical fees, the fee may only go up, and fee, VAT and total must all update together.",
+        "RESUMABLE RUNS: row-level status plus JSONL audit log, and a resume key that is the row serial, not the license number.",
+        "CONFIG TRAP: module-level environment reads ignore .env overrides; config must load lazily. A date constant was defined but never wired to the page call."
+      ],
+      "technologies": [
+        "Python",
+        "Playwright",
+        "openpyxl",
+        "pdfplumber",
+        "SQL Server"
+      ],
+      "links": {}
+    },
+    {
+      "id": "central-platform",
+      "featured": false,
+      "title": "Centralized Municipal Tax Platform: Phased Pourashava Onboarding",
+      "kind": "Professional (client work)",
+      "status": "In progress",
+      "problem": "Every Pourashava has its own tax heads, rates, ward and street structures and legacy data formats, yet a centralized platform needs all of them to behave consistently as they are connected one phase at a time.",
+      "solution": "I map and load each Pourashava's data and verify it against its source. The approach is configuration-driven onboarding instead of per-site code, reconciled loads, and regression checks so that each new connection does not disturb those already live.",
+      "technologies": [
+        "SQL Server",
+        "Python",
+        "Column mapping",
+        "Reconciliation"
+      ],
+      "links": {}
+    },
+    {
+      "id": "bengali-converter",
+      "featured": true,
+      "title": "Bijoy/SutonnyMJ to Unicode Converter",
+      "kind": "Tool",
+      "status": "Working; ongoing table-format fixes",
+      "problem": "Legacy ANSI Bengali (SutonnyMJ/Bijoy) is unreadable by modern tools.",
+      "solution": "Streamlit app for DOCX, XLSX, CSV, DOC and PDF, with a patched glyph map and fixes for reph ordering and pre-base vowels. Also run as customized scripts that convert Bengali text across whole database tables.",
+      "tricky": [
+        "REPH ORDER: the reph must move after the consonant cluster; pre-base vowels must move before it.",
+        "HAND-TYPED TRAP: Bengali text typed into regexes can be silently decomposed, so patterns never match; build them from code points.",
+        "PDF TABLES: dynamic schema detection and ward-column state tracking across page breaks."
+      ],
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "pdfplumber",
+        "Unicode"
+      ],
+      "links": {}
+    },
+    {
+      "id": "mdf-ldf-tool",
+      "featured": false,
+      "title": "MDF/LDF to Excel Tool",
+      "kind": "Tool",
+      "status": "Working (Windows, LocalDB)",
+      "solution": "Streamlit tool that reads SQL Server database files through LocalDB and exports to Excel.",
+      "technologies": [
+        "Python",
+        "Streamlit",
+        "SQL Server Express LocalDB"
+      ],
+      "links": {}
+    },
+    {
+      "id": "cypress-pom",
+      "featured": false,
+      "title": "Cypress UI Framework (Page Object Model)",
+      "kind": "Self-directed automation project",
+      "status": "Complete",
+      "solution": "End-to-end suite against automationexercise.com using Page Object Model.",
+      "technologies": [
+        "Cypress",
+        "JavaScript"
+      ],
+      "links": {
+        "github": "https://github.com/rizbiislam/Automation-Exercise-testing-with-Cypress"
+      }
+    },
+    {
+      "id": "selenium-testng",
+      "featured": false,
+      "title": "Selenium/TestNG Suite (OpenCart)",
+      "kind": "Self-directed automation project",
+      "status": "Complete",
+      "solution": "Java/TestNG automation of search, cart and checkout on the OpenCart demo.",
+      "technologies": [
+        "Selenium WebDriver",
+        "Java",
+        "TestNG"
+      ],
+      "links": {
+        "github": "https://github.com/rizbiislam/OpenCart-Automation"
+      }
+    }
+  ],
+  "assets": {
+    "hero": {
+      "src": "assets/hero-800.webp",
+      "src480": "assets/hero-480.webp",
+      "w": 800,
+      "h": 800,
+      "alt": "Rizbi Islam presenting at a podium"
+    },
+    "milestones": [
+      {
+        "src": "assets/m1-800.webp",
+        "src480": "assets/m1-480.webp",
+        "w": 800,
+        "h": 1000,
+        "alt": "Rizbi Islam tossing his graduation cap on the Daffodil International University campus"
+      },
+      {
+        "src": "assets/m2-800.webp",
+        "src480": "assets/m2-480.webp",
+        "w": 800,
+        "h": 1000,
+        "alt": "Rizbi Islam in a graduation gown on the campus lawn"
+      }
+    ]
+  },
+  "approach": [
+    {
+      "title": "Find the risk",
+      "text": "Read the requirement and map what can go wrong for citizens, revenue and data before writing a single case."
+    },
+    {
+      "title": "Design cases and data",
+      "text": "Equivalence, boundary and negative cases, plus realistic Bengali and legacy data."
+    },
+    {
+      "title": "Test every layer",
+      "text": "UI, REST API with Postman and Newman, load with JMeter and Locust, and the database itself."
+    },
+    {
+      "title": "Reconcile the data",
+      "text": "Source-versus-loaded counts, record-level checks and exception reports after every migration."
+    },
+    {
+      "title": "Report and regress",
+      "text": "Clear defect reports, client-facing performance reports, and regression on every release."
+    }
+  ]
+}
